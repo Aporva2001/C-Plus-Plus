@@ -9,6 +9,7 @@
  * is the sum of its own digits raised to the power of the number of digits.
  * @author iamnambiar
  */
+using namespace std;
 #include <cassert>
 #include <cmath>
 #include <iostream>
@@ -46,7 +47,7 @@ bool is_armstrong(int number) {
         int rem = temp % 10;
         // Finding each digit raised to the power total digit and add it to the
         // total sum
-        sum = sum + std::pow(rem, total_digits);
+        sum = sum + pow(rem, total_digits);
         temp = temp / 10;
     }
     return number == sum;
@@ -69,6 +70,9 @@ void test() {
     assert(is_armstrong(0) == true);
     // is_armstrong(12) returns false.
     assert(is_armstrong(12) == false);
+    // is_armstrong(1634) returns true.
+    assert(is_armstrong(1634)==true);
+    
 }
 
 /**
